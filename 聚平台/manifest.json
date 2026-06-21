@@ -1,0 +1,45 @@
+{
+  "manifest_version": 3,
+  "name": "Social Mixer",
+  "version": "1.0",
+  "description": "一起刷 - 多平台内容聚合",
+  "background": {
+    "service_worker": "background.js"
+  },
+  "chrome_url_overrides": {
+    "newtab": "newtab/index.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://tieba.baidu.com/*"],
+      "js": ["content-script.js"],
+      "run_at": "document_idle"
+    },
+    {
+      "matches": ["*://*.lofter.com/*"],
+      "js": ["lofter-content-script.js"],
+      "run_at": "document_idle"
+    },
+    {
+      "matches": ["*://*.xiaohongshu.com/*"],
+      "js": ["xiaohongshu-content-script.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "permissions": [
+    "cookies",
+    "storage",
+    "alarms",
+    "activeTab"
+  ],
+  "host_permissions": [
+    "*://*.bilibili.com/*",
+    "*://*.hdslb.com/*",
+    "*://*.baidu.com/*",
+    "*://*.bdstatic.com/*",
+    "*://*.lofter.com/*",
+    "*://*.lfstatic.com/*",
+    "*://*.xiaohongshu.com/*",
+    "*://*.xhslink.com/*"
+  ]
+}

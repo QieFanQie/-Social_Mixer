@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <title>Social Mixer - 一起刷</title>
+    <link rel="stylesheet" href="style.css?v=1.2">
+</head>
+<body>
+    <!-- 顶部导航 -->
+    <header class="header">
+        <div class="header-left">
+            <h1 class="logo">🔄 Social Mixer</h1>
+            <span class="subtitle">一起刷</span>
+        </div>
+        <div class="header-right">
+            <button id="refreshAll" class="btn btn-refresh-all">
+                🔄 刷新全部
+            </button>
+            <button id="refreshBili" class="btn btn-primary">
+                📺 刷新B站
+            </button>
+            <button id="refreshTieba" class="btn btn-secondary">
+                💬 刷新贴吧
+            </button>
+            <button id="refreshLofter" class="btn btn-lofter">
+                🎨 刷新Lofter
+            </button>
+            <button id="refreshXiaohongshu" class="btn btn-xiaohongshu">
+                🍠 刷新小红书
+            </button>
+        </div>
+    </header>
+
+    <!-- 内容区域 -->
+    <main class="main">
+        <!-- 混合内容流 -->
+        <section class="section">
+            <div class="section-header">
+                <h2 class="section-title">� 内容流</h2>
+                <span class="section-meta" id="contentMeta">加载中...</span>
+            </div>
+            <div class="card-list" id="contentCards">
+                <div class="loading">加载中...</div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 提示弹窗 -->
+    <div class="toast" id="toast">
+        <span id="toastMessage">提示消息</span>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
